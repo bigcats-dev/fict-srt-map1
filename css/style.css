@@ -961,7 +961,7 @@ transition: .33s all ease-out;
   background: #555; 
 }
 .item-sup .sup-menu .sidebar-link.active{
-  background-color: var(--main);   
+  background-color: var(--main3);    
 }
 .item-sup .sup-menu .sidebar-link:hover{
   background-color: var(--main3);    

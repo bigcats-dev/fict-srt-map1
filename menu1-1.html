@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
         <link href="css/select2.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="wrapper">
@@ -34,7 +35,7 @@
                     <!-- <h2 class="text-center">ระบบรายงาน <br>งบประมาณประจำปี</h2>  -->
                     <br>
                     <ul class="sidebar-nav">   
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="index.html">
                                 <i class="fas fa-th-large menu-icon"></i>
 								<span class="align-middle">Dashboard</span> 
@@ -145,14 +146,14 @@
                                 </a>     
                             </div>
                         </li>  
-                        <li class="sidebar-item item-sup">
+                        <li class="sidebar-item item-sup active show">
                             <a class="sidebar-link" href="#">
 								<i class="far fa-file-alt menu-icon"></i>
 								<span class="align-middle">รายงาน </span>
 								<i class="fas fa-angle-down"></i>
                             </a>
                             <div class="sup-menu">
-                                <a class="sidebar-link" href="menu1-1.html"> 
+                                <a class="sidebar-link active" href="menu1-1.html"> 
                                     <span class="align-middle">ประวัติการชำระภาษี</span>
                                 </a>    
                                 <a class="sidebar-link" href="menu1-2.html"> 
@@ -241,101 +242,138 @@
                     </div>
                 </nav>
                 <main class="content">
-                    <div class="container-fluid p-0">
-                        <!-- <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <h3>หน้าหลัก</h3> 
-                            </div> 
-                        </div> -->
-                        <div class="col-12">
-                            <div class="card p-3 bord3">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3 pt-2">   
-                                        <h4><i class="fal fa-calendar-alt"></i> สรุปข้อมูลภาษีที่จัดเก็บ</h4>
-                                    </div>    
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3">  
-                                        <select class="js-example-basic-multiple w-100" id="year"> 
-                                            <option value="0" disabled selected>-- ปี --</option> 
-                                            <option value="2568">2568</option>
-                                            <option value="2567" selected>2567</option>
-                                            <option value="2566">2566</option>
-                                            <option value="2565">2565</option>
-                                            <option value="2564">2564</option>
-                                        </select>
-                                    </div>     
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3">  
-                                        <select class="js-example-basic-multiple w-100" id="line"> 
-                                            <option value="0" disabled selected>-- เดือน --</option> 
-                                            <option value="01">มกราคม</option>
-                                            <option value="02">กุมภาพันธ์</option> 
-                                        </select>
-                                    </div>    
-                                </div>   
-                                <div class="row mt-2">
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-info">
-                                            <i class="fas fa-circle"></i> รวมแปลง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>103,390 </b></h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="far fa-circle"></i> แยกแปลง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>2,331</b></h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-danger">
-                                            <i class="fas fa-adjust"></i> ระบบบริหารจัดการรางวัลภายนอก
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>10 รางวัล</b></h2>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="row mt-2"> 
-                                    <div class="col-lg-12 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-bar"></i> องค์ความรู้และนวัตกรรม
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <canvas id="chart1"></canvas> 
-                                        </div>
-                                    </div>
-                                </div>  
-                                <div class="row mt-2"> 
-                                    <div class="col-lg-5 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-pie"></i> ระบบสื่อการเรียนรู้ออนไลน์ (E-Learning)
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center position-relative"> 
-                                            <canvas id="chart2" class="d-block m-auto"></canvas> 
-                                            <button type="button" class="btn btn-info mt-5">
-                                                <i class="fal fa-search-plus"></i> คลิกเพื่อขยาย
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-bar"></i> ระบบกระดานสนทนาความรู้ (Webboard)
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center position-relative"> 
-                                            <canvas id="chart3"></canvas> 
-                                            <br>
-                                            <button type="button" class="btn btn-info mt-3">
-                                                <i class="fal fa-search-plus"></i> คลิกเพื่อขยาย
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> 
+                    <div class="container-fluid p-0"> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="mb-3">รายงานประวัติการชำระภาษี</h2>
                             </div> 
                         </div>
+
+                        <div class="col-12">
+                            
+                            <div class="card p-3 bord3">
+                                <form class="form-rp">
+                                    <div class="row"> 
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="year">ปี</label>
+                                            <select class="js-example-basic-multiple w-100" id="year"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">2568</option>
+                                                <option value="2">2567</option>
+                                                <option value="3">2566</option> 
+                                                <option value="4">2565</option> 
+                                                <option value="5">2564</option> 
+                                                <option value="6">2563</option> 
+                                            </select>
+                                        </div>    
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="property_type">ประเภททรัพย์สิน	</label>
+                                            <select class="js-example-basic-multiple w-100" id="property_type"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">ที่ดิน</option>
+                                                <option value="2">สิ่งปลูกสร้าง</option> 
+                                            </select>
+                                        </div>    
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">ประเภทการเสียภาษี</label>
+                                            <select class="js-example-basic-multiple w-100" id="status"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">ชำระแล้ว</option>
+                                                <option value="2">ค้างชำระ</option> 
+                                                <option value="3">ได้รับการยกเว้น</option> 
+                                            </select>
+                                        </div>      
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">เลขที่โฉนด/สิ่งปลูกสร้าง	 </label>
+                                            <input type="text" class="form-control">
+                                        </div>   
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">รหัสทรัพย์สิน อปท. </label>
+                                            <input type="text" class="form-control">
+                                        </div>    
+                                        <hr>
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-primary"><i class="fal fa-search"></i> ค้นหา</button> 
+                                        </div>
+                                    </div> 
+                                </form>
+
+                                <br>
+                                
+                                <div class="table-responsive">
+
+                                    <table class="table table-borderless table-striped tb-num" style="vertical-align: middle;">  
+                                        <thead>
+                                            <tr>
+                                                <th>ลำดับ</th> 
+                                                <th>เลขที่โฉนด/สิ่งปลูกสร้าง</th>
+                                                <th>ประเภททรัพย์สิน</th>
+                                                <th>มูลค่าทรัพย์สิน (บาท)</th>
+                                                <th>ยอดภาษีที่ต้องชำระ (บาท)</th>
+                                                <th>วันที่ชำระภาษี</th>
+                                                <th class="text-center">สถานะการชำระเงิน</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td> 
+                                                <td>12345678</td>
+                                                <td>ที่ดิน</td>
+                                                <td>1,500,000</td>
+                                                <td>1,500</td>
+                                                <td>15/02/2567</td>
+                                                <td class="text-center">ชำระแล้ว</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td> 
+                                                <td>87654321</td>
+                                                <td>สิ่งปลูกสร้าง</td>
+                                                <td>2,000,000</td>
+                                                <td>4,000</td>
+                                                <td>01/03/2567</td>
+                                                <td class="text-center">ชำระแล้ว</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td> 
+                                                <td>135792468</td>
+                                                <td>สิ่งปลูกสร้าง</td>
+                                                <td>10,000,000</td>
+                                                <td>30,000</td>
+                                                <td>20/01/2567</td>
+                                                <td class="text-center">ชำระแล้ว</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td> 
+                                                <td>246813579</td>
+                                                <td>สิ่งปลูกสร้าง</td>
+                                                <td>5,000,000</td>
+                                                <td>15,000</td>
+                                                <td>-</td>
+                                                <td class="text-center">ค้างชำระ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td> 
+                                                <td>1029384756</td>
+                                                <td>ที่ดิน</td>
+                                                <td>3,000,000</td>
+                                                <td>3,000</td>
+                                                <td>10/04/2567</td>
+                                                <td class="text-center">ชำระแล้ว</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="col"> 
+                                    <button type="button" class="btn btn-warning" ><i class="fal fa-print"></i> Print</button>
+                                    <button type="button" class="btn btn-danger" ><i class="fal fa-file-pdf"></i> Export PDF</button>
+                                    <button type="button" class="btn btn-success" ><i class="fal fa-file-excel"></i> Export Excel</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </main>
+                </main> 
             </div>
         </div>
 
@@ -347,9 +385,8 @@
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.bootstrap5.min.js"></script>
         <script src="js/select2.min.js"></script> 
-         
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        
+        <script src="js/bootstrap-datepicker.min.js"></script> 
+        <script src="js/bootstrap-datepicker.th.min.js"></script> 
 
 
         <script>  
@@ -358,78 +395,15 @@
                 $('.item-sup').click(function () {
                     $(this).toggleClass("show");    
                 });   
-            });   
+            });    
+			$('.datepicker').datepicker({ 
+				todayHighlight: true, 
+				language: 'th',
+                format: 'dd/mm/yyyy',   
+                autoclose: true
+			});
             $(".tb-num td:nth-child(1)").each(function(i,v) {$(v).text(i + 1);});
         </script> 
-        
-        <script>
- 
-            var myContext = document.getElementById("chart1").getContext('2d'); 
-            var myChart = new Chart(myContext, { 
-                type: 'bar', 
-                data: { 
-                    labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม",  "เมษายน", "พฤษภาคม", "มิถุนายน","กรกฏาคม", "สิงหาคม", "กันยายน",  "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], 
-                    datasets: [{ 
-                        label: 'ผู้เข้าใช้งาน องค์ความรู้', 
-                        backgroundColor: "#4AC0C0", 
-                        data: [1330, 800, 500, 1220 , 800, 1500, 1900 ,1200, 1600, 800, 120 , 303], 
-                    } 
-                    ], 
-                }, 
-                options: {  
-                    scales: { 
-                        x: { 
-                            stacked: true, 
-                        }, 
-                        y: { 
-                            stacked: true 
-                        } 
-                    } 
-                } 
-            });  
-
-            
-            var xValues = ["ผ่านการเรียนรู้", "ไม่ผ่านการเรียนรู้"];
-            var yValues = [78, 5];
-            var barColors = [ "#4AC0C0","#FE6383"]; 
-            // chart2.height = "400px"; 
-            new Chart("chart2", {
-            type: "pie",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                    }]
-                } 
-            });
-        
-            var myContext = document.getElementById("chart3").getContext('2d'); 
-            var myChart = new Chart(myContext, { 
-                type: 'bar', 
-                data: { 
-                    labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม",  "เมษายน", "พฤษภาคม", "มิถุนายน","กรกฏาคม", "สิงหาคม", "กันยายน",  "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], 
-                    datasets: [{ 
-                        label: 'ผู้เข้าใช้งาน องค์ความรู้', 
-                        backgroundColor: "#4AC0C0", 
-                        data: [1330, 800, 500, 1220 , 800, 1500, 1900 ,1200, 1600, 800, 120 , 303], 
-                    } 
-                    ], 
-                }, 
-                options: {  
-                    scales: { 
-                        x: { 
-                            stacked: true, 
-                        }, 
-                        y: { 
-                            stacked: true 
-                        } 
-                    } 
-                } 
-            }); 
-
-        </script>
-            
  
     </body>
 </html>

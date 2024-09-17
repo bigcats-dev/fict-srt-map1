@@ -41,13 +41,13 @@
 								<span class="align-middle">Dashboard</span> 
                             </a> 
                         </li>      
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="menu2.html">
                                 <i class="fas fa-th-large menu-icon"></i>
 								<span class="align-middle">นำเข้าข้อมูล ภดส.7 (ข้อมูลจาก อปท.) </span> 
                             </a> 
                         </li>    
-                        <li class="sidebar-item item-sup">
+                        <li class="sidebar-item item-sup active show">
                             <a class="sidebar-link" href="#"> 
                                 <i class="fas fa-link menu-icon"></i>
 								<span class="align-middle">เชื่อมโยงข้อมูล </span>
@@ -60,7 +60,7 @@
                                 <a class="sidebar-link" href="menu3-2.html"> 
                                     <span class="align-middle">เชื่อมโยงราคาประเมินสิ่งปลูกสร้าง</span>
                                 </a>    
-                                <a class="sidebar-link" href="menu3-3.html"> 
+                                <a class="sidebar-link active" href="menu3-3.html"> 
                                     <span class="align-middle">เชื่อมโยงข้อมูล</span>
                                 </a>     
                             </div>
@@ -245,41 +245,109 @@
                     <div class="container-fluid p-0"> 
 
                         <div class="row">
-                            <div class="col-6">
-                                <h4 class="mb-3"> นำเข้าข้อมูล ภดส.7 (ข้อมูลจาก อปท.)</h4>
-                            </div>
-                            <div class="col-6 text-end">
-                                <button type="button" class="btn btn-info" ><i class="fal fa-file-excel"></i> นำเข้า CSV,XLS</button>
-                                <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-cog"></i> ตั้งค่าการประเมิน</button> -->
-                            </div>
+                            <div class="col-12">
+                                <h2 class="mb-3">เชื่อมโยงข้อมูล</h2>
+                            </div> 
                         </div>
 
                         <div class="col-12">
                             
                             <div class="card p-3 bord3">
                                 <form class="form-rp">
-                                    <div class="row">
+                                    <div class="row"> 
                                         <div class="col-lg-4 col-md-6 col-12 mb-3"> 
-                                            <label for="year">ชื่อไฟล์นำเข้า</label>
-                                            <input type="text" class="form-control">
+                                            <label for="province">จังหวัด	</label>
+                                            <select class="js-example-basic-multiple w-100" id="province"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">กรุงเทพมหานคร</option>
+                                                <option value="2">กระบี่</option>
+                                                <option value="3">กาญจนบุรี</option>
+                                                <option value="4">ขอนแก่น</option>
+                                                <option value="5">ชัยนาท</option>
+                                                <option value="6">ชัยภูมิ</option>
+                                                <option value="7">เชียงใหม่</option>
+                                                <option value="8">เชียงราย</option>
+                                                <option value="9">ชุมพร</option>
+                                                <option value="10">ชลบุรี</option>
+                                                <option value="11">ตาก</option>
+                                                <option value="12">ตรัง</option>
+                                                <option value="13">ตราด</option>
+                                                <option value="14">นครนายก</option>
+                                                <option value="15">นครปฐม</option>
+                                                <option value="16">นครราชสีมา</option>
+                                                <option value="17">นครศรีธรรมราช</option>
+                                                <option value="18">นครพนม</option>
+                                                <option value="19">นราธิวาส</option>
+                                                <option value="20">น่าน</option>
+                                                <option value="21">นนทบุรี</option>
+                                                <option value="22">บุรีรัมย์</option>
+                                                <option value="23">บึงกาฬ</option>
+                                                <option value="24">ประจวบคีรีขันธ์</option>
+                                                <option value="25">ปราจีนบุรี</option>
+                                                <option value="26">ปัตตานี</option>
+                                                <option value="27">พะเยา</option>
+                                                <option value="28">พัทลุง</option>
+                                                <option value="29">พิจิตร</option>
+                                                <option value="30">พิษณุโลก</option>
+                                                <option value="31">เพชรบูรณ์</option>
+                                                <option value="32">เพชรบุรี</option>
+                                                <option value="33">ภูเก็ต</option>
+                                                <option value="34">ลพบุรี</option>
+                                                <option value="35">ลำปาง</option>
+                                                <option value="36">ลำพูน</option>
+                                                <option value="37">เลย</option>
+                                                <option value="38">ศรีสะเกษ</option>
+                                                <option value="39">สตูล</option>
+                                                <option value="40">สงขลา</option>
+                                                <option value="41">สมุทรปราการ</option>
+                                                <option value="42">สมุทรสาคร</option>
+                                                <option value="43">สมุทรสงคราม</option>
+                                                <option value="44">สระแก้ว</option>
+                                                <option value="45">สระบุรี</option>
+                                                <option value="46">สิงห์บุรี</option>
+                                                <option value="47">สุโขทัย</option>
+                                                <option value="48">สุราษฎร์ธานี</option>
+                                                <option value="49">สุรินทร์</option>
+                                                <option value="50">สุมทรปราการ</option>
+                                                <option value="51">สุมทรสาคร</option>
+                                                <option value="52">สุมทรสงคราม</option>
+                                                <option value="53">หนองคาย</option>
+                                                <option value="54">หนองบัวลำภู</option>
+                                                <option value="55">อำนาจเจริญ</option>
+                                                <option value="56">อุดรธานี</option>
+                                                <option value="57">อุตรดิตถ์</option>
+                                                <option value="58">อุบลราชธานี</option>
+                                                <option value="59">อุทัยธานี</option>
+                                            </select>
+                                        </div>    
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="district">อำเภอ	</label>
+                                            <select class="js-example-basic-multiple w-100" id="district"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">อำเภอ</option>
+                                                <option value="2">อำเภอ</option> 
+                                            </select>
+                                        </div>   
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="sub_district">ตำบล	</label>
+                                            <select class="js-example-basic-multiple w-100" id="sub_district"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">อำเภอ</option>
+                                                <option value="2">อำเภอ</option> 
+                                            </select>
+                                        </div>   
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">ประเภทข้อมูล	</label>
+                                            <select class="js-example-basic-multiple w-100" id="status"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">ที่ดิน</option>
+                                                <option value="2">สิ่งปลูกสร้าง	</option>  
+                                            </select>
                                         </div>      
                                         <div class="col-lg-4 col-md-6 col-12 mb-3"> 
-                                            <label for="year">วันที่นำเข้า</label>
-                                            <div class="position-relative">
-                                                <input type="text" class="form-control icon-input datepicker">
-                                                <i class="fal fa-calendar-alt"></i>
-                                            </div>
+                                            <label for="status">เลขที่โฉนด/สิ่งปลูกสร้าง	 </label>
+                                            <input type="text" class="form-control">
                                         </div>    
-                                        <!-- <div class="col-lg-4 col-md-6 col-12 mb-3"> 
-                                            <label for="month">ปรเภทผลงาน</label>
-                                            <select class="js-example-basic-multiple w-100" id="month"> 
-                                                <option value="0" disabled selected>-- กรุณาเลือก --</option> 
-                                                <option value="">ปรเภทผลงาน</option>
-                                                <option value="1">ปรเภทผลงาน</option>
-                                                <option value="2">ปรเภทผลงาน</option>
-                                                <option value="3">ปรเภทผลงาน</option> 
-                                            </select>
-                                        </div>     -->
                                         <hr>
                                         <div class="col-12 text-center">
                                             <button class="btn btn-primary"><i class="fal fa-search"></i> ค้นหา</button> 
@@ -291,74 +359,155 @@
                                 
                                 <div class="table-responsive">
 
-                                    <table class="table table-borderless table-striped tb-num" style="vertical-align: middle;">
+                                    <table class="table table-borderless table-striped tb-num" style="vertical-align: middle;">  
                                         <thead>
                                             <tr>
-                                                <th class="text-center">#</th>
-                                                <th class="text-center">ชื่อไฟล์นำเข้า</th>
-                                                <th class="text-center">วันที่นำเข้า</th> 
-                                                <th class="text-center">เจ้าหน้าที่นำเข้า</th> 
-                                                <th class="text-center">ดูรายละเอียดไฟล์</th>   
+                                                <th>รหัสที่ดิน</th>
+                                                <th>หมายเลขแปลง</th>
+                                                <th>จังหวัด</th>
+                                                <th>อำเภอ</th>
+                                                <th>ตำบล</th>
+                                                <th>ประเภทข้อมูล</th>
+                                                <th>ขนาด (ตารางวา)</th> 
+                                                <th>หมายเหตุ</th>
+                                                <th class="text-center">รายละเอียด</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>001</td>
+                                                <td>12345</td>
+                                                <td>กรุงเทพฯ</td>
+                                                <td>ปทุมวัน</td>
+                                                <td>พญาไท</td>
+                                                <td>ที่ดิน</td>
+                                                <td>100</td> 
+                                                <td>-</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>002</td>
+                                                <td>67890</td>
+                                                <td>นนทบุรี</td>
+                                                <td>เมืองนนทบุรี</td>
+                                                <td>ท่าทราย</td>
+                                                <td>ที่ดิน</td>
+                                                <td>200</td> 
+                                                <td>-</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>003</td>
+                                                <td>54321</td>
+                                                <td>ชลบุรี</td>
+                                                <td>ศรีราชา</td>
+                                                <td>หนองขาม</td>
+                                                <td>ที่ดิน</td>
+                                                <td>150</td> 
+                                                <td>-</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>004</td>
+                                                <td>98765</td>
+                                                <td>เชียงใหม่</td>
+                                                <td>เมืองเชียงใหม่</td>
+                                                <td>ช้างเผือก</td>
+                                                <td>ที่ดิน</td>
+                                                <td>120</td> 
+                                                <td>อัพเดทล่าสุด</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>005</td>
+                                                <td>13579</td>
+                                                <td>ขอนแก่น</td>
+                                                <td>เมืองขอนแก่น</td>
+                                                <td>ในเมือง</td>
+                                                <td>ที่ดิน</td>
+                                                <td>180</td> 
+                                                <td>-</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                             <tr>
-                                                <td class="text-center">-</td>
-                                                <td class="text-center">ภดส.7-10-09-2567.csv</td>
-                                                <td class="text-center">13/09/2567	 </td> 
-                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td>006</td>
+                                                <td>24680</td>
+                                                <td>สงขลา</td>
+                                                <td>หาดใหญ่</td>
+                                                <td>คลองแห</td>
+                                                <td>ที่ดิน</td>
+                                                <td>250</td> 
+                                                <td>-</td>
                                                 <td class="text-center">
-                                                    <a class="btn btn-danger btn-sm" href="menu2-view.html"><i class="fas fa-file-pdf"></i></a>   
-                                                </td> 
-                                            </tr>     
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>007</td>
+                                                <td>11223</td>
+                                                <td>อุดรธานี</td>
+                                                <td>เมืองอุดรธานี</td>
+                                                <td>หนองบัว</td>
+                                                <td>ที่ดิน</td>
+                                                <td>300</td> 
+                                                <td>-</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>008</td>
+                                                <td>33445</td>
+                                                <td>นครราชสีมา</td>
+                                                <td>เมืองนครราชสีมา</td>
+                                                <td>ประจันตคาม</td>
+                                                <td>ที่ดิน</td>
+                                                <td>220</td> 
+                                                <td>-</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>009</td>
+                                                <td>55667</td>
+                                                <td>สมุทรปราการ</td>
+                                                <td>เมืองสมุทรปราการ</td>
+                                                <td>สำโรงเหนือ</td>
+                                                <td>ที่ดิน</td>
+                                                <td>150</td> 
+                                                <td>-</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>010</td>
+                                                <td>77889</td>
+                                                <td>ระยอง</td>
+                                                <td>เมืองระยอง</td>
+                                                <td>ท่าประดู่</td>
+                                                <td>ที่ดิน</td>
+                                                <td>200</td> 
+                                                <td>-</td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                </td>
+                                            </tr>
                                         </tbody>
-                                    </table> 
+                                    </table>
                                 </div>
+                                <hr> 
                             </div>
                         </div>
                     </div>
@@ -390,8 +539,7 @@
 				language: 'th',
                 format: 'dd/mm/yyyy',   
                 autoclose: true
-			});
-            $(".tb-num td:nth-child(1)").each(function(i,v) {$(v).text(i + 1);});
+			}); 
         </script> 
  
     </body>
