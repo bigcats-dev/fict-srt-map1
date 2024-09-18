@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FICT CV Management">
+        <meta name="author" content="FICT CV Management"> 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="img/logo.png" />
+        
+        <title>แผนที่ภาษีการรถไฟ เฟส 1</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/app.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
+        <link href="css/select2.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav id="sidebar" class="sidebar js-sidebar">
+                <div class="sidebar-content js-simplebar">
+                    
+					<div class="logo-flex">
+                        <img src="img/logo.png" class="logo" alt="แผนที่ภาษีการรถไฟ">
+                        <div>
+                            แผนที่ภาษีการรถไฟ
+                        </div>
+                    </div>
+                    <!-- <h2 class="text-center">ระบบรายงาน <br>งบประมาณประจำปี</h2>  -->
+                    <br>
+                    <ul class="sidebar-nav">   
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="index.html">
+                                <i class="fas fa-th-large menu-icon"></i>
+								<span class="align-middle">Dashboard</span> 
+                            </a> 
+                        </li>      
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="menu2.html">
+                                <i class="fas fa-th-large menu-icon"></i>
+								<span class="align-middle">นำเข้าข้อมูล ภดส.7 (ข้อมูลจาก อปท.) </span> 
+                            </a> 
+                        </li>    
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#"> 
+                                <i class="fas fa-link menu-icon"></i>
+								<span class="align-middle">เชื่อมโยงข้อมูล </span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu3-1.html"> 
+                                    <span class="align-middle">เชื่อมโยงราคาประเมินที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu3-2.html"> 
+                                    <span class="align-middle">เชื่อมโยงราคาประเมินสิ่งปลูกสร้าง</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu3-3.html"> 
+                                    <span class="align-middle">เชื่อมโยงข้อมูล</span>
+                                </a>     
+                            </div>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="menu4.html">
+                                <i class="fas fa-calculator menu-icon"></i> 
+								<span class="align-middle">คำนวณภาษี </span> 
+                            </a> 
+                        </li> 
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#">
+                                <i class="fas fa-calculator menu-icon"></i> 
+								<span class="align-middle">เปรียบเทียบข้อมูลภาษี คำนวณเองกับที่ อปท. แจ้ง </span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu5-1.html"> 
+                                    <span class="align-middle">ภาษีที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu5-2.html"> 
+                                    <span class="align-middle">ภาษีสิ่งปลูกสร้าง</span>
+                                </a>     
+                            </div>
+                        </li>  
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#">
+								<i class="fas fa-landmark menu-icon"></i>
+								<span class="align-middle">เชื่อมโยงข้อมูล LTAX Online</span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu6-1.html"> 
+                                    <span class="align-middle">รูปแปลงที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu6-2.html"> 
+                                    <span class="align-middle">แผนที่สิ่งปลูกสร้าง</span>
+                                </a>     
+                            </div>
+                        </li>  
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#"> 
+                                <i class="far fa-map menu-icon"></i>
+								<span class="align-middle">เปรียบเทียบข้อมูลแผนที่ GIS และ LTAX</span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu7-1.html"> 
+                                    <span class="align-middle">รูปแปลงที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu7-2.html"> 
+                                    <span class="align-middle">แผนที่สิ่งปลูกสร้าง</span>
+                                </a>     
+                            </div>
+                        </li>  
+                        <li class="sidebar-item item-sup active show">
+                            <a class="sidebar-link" href="#">
+                                <i class="fas fa-file-import menu-icon"></i> 
+								<span class="align-middle">นำเข้าข้อมูลที่ได้จากการสำรวจ</span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu8-1.html"> 
+                                    <span class="align-middle">รูปแปลงที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link active" href="menu8-2.html"> 
+                                    <span class="align-middle">แผนที่สิ่งปลูกสร้าง</span>
+                                </a>     
+                            </div>
+                        </li> 
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#">
+                                <i class="far fa-map menu-icon"></i>
+								<span class="align-middle">เปรียบเทียบข้อมูลแผนที่จากการสำรวจ และ LTAX</span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu9-1.html"> 
+                                    <span class="align-middle">รูปแปลงที่ดิน</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu9-2.html"> 
+                                    <span class="align-middle">แผนที่สิ่งปลูกสร้าง</span>
+                                </a>     
+                            </div>
+                        </li>  
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#">
+								<i class="far fa-file-alt menu-icon"></i>
+								<span class="align-middle">รายงาน </span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu1-1.html"> 
+                                    <span class="align-middle">ประวัติการชำระภาษี</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu1-2.html"> 
+                                    <span class="align-middle">รายงานประเมินภาษี</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu1-3.html"> 
+                                    <span class="align-middle">รายงานการเสียภาษีหรือยกเว้น</span>
+                                </a>    
+                                <a class="sidebar-link" href="menu1-4.html"> 
+                                    <span class="align-middle">รายงานประเมินภาษีตามประเภทการใช้ประโยชน์</span>
+                                </a>    
+                            </div>
+                        </li>   
+                        <li class="sidebar-item item-sup">
+                            <a class="sidebar-link" href="#">
+								<i class="far fa-cog"></i>
+								<span class="align-middle">ตั้งค่าระบบ</span>
+								<i class="fas fa-angle-down"></i>
+                            </a>
+                            <div class="sup-menu">
+                                <a class="sidebar-link" href="menu10-1.html"> 
+                                    <span class="align-middle">อัตราภาษีที่ดิน</span>
+                                </a>   
+                                <a class="sidebar-link" href="menu10-2.html"> 
+                                    <span class="align-middle">อัตราภาษีสิ่งปลูกสร้าง</span>
+                                </a>       
+                            </div>
+                        </li>   
+ 
+
+                    </ul>  
+                </div>
+            </nav>
+            <div class="main">
+                <nav class="navbar navbar-expand navbar-light navbar-bg">
+                    <a class="sidebar-toggle js-sidebar-toggle">
+                        <i class="hamburger align-self-center"></i>
+                    </a> 
+                    <div class="navbar-collapse collapse">
+                        <ul class="navbar-nav navbar-align">  
+                            <li class="nav-item dropdown">
+                                <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                                    <div class="position-relative">
+                                        <i class="align-middle" data-feather="bell"></i>
+                                        <span class="indicator">4</span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+                                    <div class="dropdown-menu-header">
+                                        4 New Notifications
+                                    </div>
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item">
+                                            <div class="row g-0 align-items-center">
+                                                <div class="col-2">
+                                                    <i class="text-danger" data-feather="alert-circle"></i>
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="text-dark">Update completed</div>
+                                                    <div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+                                                    <div class="text-muted small mt-1">30m ago</div>
+                                                </div>
+                                            </div>
+                                        </a> 
+                                    </div>
+                                    <div class="dropdown-menu-footer">
+                                        <a href="#" class="text-muted">Show all notifications</a>
+                                    </div>
+                                </div>
+                            </li> 
+                            <li class="nav-item dropdown">
+                                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                                <i class="align-middle" data-feather="settings"></i>
+                                </a>
+                                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                                <img src="img/avatar.png" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Admin</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> โปรไฟล์</a>  
+                                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="settings"></i> ตั้งค่า</a> 
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.html">ออกจากระบบ</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <main class="content">
+                    <div class="container-fluid p-0"> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="mb-3">นำเข้าข้อมูล ภดส.7 <i class="fal fa-angle-right"></i> แผนที่สิ่งปลูกสร้าง-10-09-2567.csv</h2>
+                            </div> 
+                        </div>
+
+                        <div class="col-12">
+                            
+                            <div class="card p-3 bord3">
+                                <form class="form-rp">
+                                    <div class="row"> 
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="province">จังหวัด	</label>
+                                            <select class="js-example-basic-multiple w-100" id="province"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">กรุงเทพมหานคร</option>
+                                                <option value="2">กระบี่</option>
+                                                <option value="3">กาญจนบุรี</option>
+                                                <option value="4">ขอนแก่น</option>
+                                                <option value="5">ชัยนาท</option>
+                                                <option value="6">ชัยภูมิ</option>
+                                                <option value="7">เชียงใหม่</option>
+                                                <option value="8">เชียงราย</option>
+                                                <option value="9">ชุมพร</option>
+                                                <option value="10">ชลบุรี</option>
+                                                <option value="11">ตาก</option>
+                                                <option value="12">ตรัง</option>
+                                                <option value="13">ตราด</option>
+                                                <option value="14">นครนายก</option>
+                                                <option value="15">นครปฐม</option>
+                                                <option value="16">นครราชสีมา</option>
+                                                <option value="17">นครศรีธรรมราช</option>
+                                                <option value="18">นครพนม</option>
+                                                <option value="19">นราธิวาส</option>
+                                                <option value="20">น่าน</option>
+                                                <option value="21">นนทบุรี</option>
+                                                <option value="22">บุรีรัมย์</option>
+                                                <option value="23">บึงกาฬ</option>
+                                                <option value="24">ประจวบคีรีขันธ์</option>
+                                                <option value="25">ปราจีนบุรี</option>
+                                                <option value="26">ปัตตานี</option>
+                                                <option value="27">พะเยา</option>
+                                                <option value="28">พัทลุง</option>
+                                                <option value="29">พิจิตร</option>
+                                                <option value="30">พิษณุโลก</option>
+                                                <option value="31">เพชรบูรณ์</option>
+                                                <option value="32">เพชรบุรี</option>
+                                                <option value="33">ภูเก็ต</option>
+                                                <option value="34">ลพบุรี</option>
+                                                <option value="35">ลำปาง</option>
+                                                <option value="36">ลำพูน</option>
+                                                <option value="37">เลย</option>
+                                                <option value="38">ศรีสะเกษ</option>
+                                                <option value="39">สตูล</option>
+                                                <option value="40">สงขลา</option>
+                                                <option value="41">สมุทรปราการ</option>
+                                                <option value="42">สมุทรสาคร</option>
+                                                <option value="43">สมุทรสงคราม</option>
+                                                <option value="44">สระแก้ว</option>
+                                                <option value="45">สระบุรี</option>
+                                                <option value="46">สิงห์บุรี</option>
+                                                <option value="47">สุโขทัย</option>
+                                                <option value="48">สุราษฎร์ธานี</option>
+                                                <option value="49">สุรินทร์</option>
+                                                <option value="50">สุมทรปราการ</option>
+                                                <option value="51">สุมทรสาคร</option>
+                                                <option value="52">สุมทรสงคราม</option>
+                                                <option value="53">หนองคาย</option>
+                                                <option value="54">หนองบัวลำภู</option>
+                                                <option value="55">อำนาจเจริญ</option>
+                                                <option value="56">อุดรธานี</option>
+                                                <option value="57">อุตรดิตถ์</option>
+                                                <option value="58">อุบลราชธานี</option>
+                                                <option value="59">อุทัยธานี</option>
+                                            </select>
+                                        </div>    
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="district">อำเภอ	</label>
+                                            <select class="js-example-basic-multiple w-100" id="district"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">อำเภอ</option>
+                                                <option value="2">อำเภอ</option> 
+                                            </select>
+                                        </div>   
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="sub_district">ตำบล	</label>
+                                            <select class="js-example-basic-multiple w-100" id="sub_district"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">อำเภอ</option>
+                                                <option value="2">อำเภอ</option> 
+                                            </select>
+                                        </div>   
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">ประเภทข้อมูล	</label>
+                                            <select class="js-example-basic-multiple w-100" id="status"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option>  
+                                                <option value="1">ที่ดิน</option>
+                                                <option value="2">สิ่งปลูกสร้าง	</option>  
+                                            </select>
+                                        </div>      
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="status">เลขที่โฉนด/สิ่งปลูกสร้าง	 </label>
+                                            <input type="text" class="form-control">
+                                        </div>    
+                                        <hr>
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-primary"><i class="fal fa-search"></i> ค้นหา</button> 
+                                        </div>
+                                    </div> 
+                                </form>
+
+                                <br>
+                                
+                                <div class="table-responsive">  
+                                    <table class="table table-borderless table-striped tb-num" style="vertical-align: middle;">
+                                        <thead>
+                                            <tr>
+                                                <th>รหัสสิ่งปลูกสร้าง (Building ID)</th>
+                                                <th>ประเภทสิ่งปลูกสร้าง (Building Type)</th>
+                                                <th>ขนาด (Size)</th>
+                                                <th>พิกัดเริ่มต้น (Start Coordinates)</th>
+                                                <th>พิกัดสิ้นสุด (End Coordinates)</th>
+                                                <th>สถานะ (Status)</th>
+                                                <th>อายุสิ่งปลูกสร้าง (Age of Building)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>B001</td>
+                                                <td>สำนักงาน</td>
+                                                <td>2,500 ตร.ม.</td>
+                                                <td>13.7563, 100.5018</td>
+                                                <td>13.7567, 100.5020</td>
+                                                <td>ใช้งานอยู่</td>
+                                                <td>25 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B002</td>
+                                                <td>โรงงาน</td>
+                                                <td>3,000 ตร.ม.</td>
+                                                <td>13.7520, 100.4900</td>
+                                                <td>13.7525, 100.4905</td>
+                                                <td>รอการซ่อม</td>
+                                                <td>40 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B003</td>
+                                                <td>คลังสินค้า</td>
+                                                <td>5,500 ตร.ม.</td>
+                                                <td>13.7600, 100.5050</td>
+                                                <td>13.7610, 100.5060</td>
+                                                <td>ใช้งานอยู่</td>
+                                                <td>10 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B004</td>
+                                                <td>หอพักพนักงาน</td>
+                                                <td>1,200 ตร.ม.</td>
+                                                <td>13.7400, 100.4800</td>
+                                                <td>13.7415, 100.4820</td>
+                                                <td>ปิดปรับปรุง</td>
+                                                <td>30 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B005</td>
+                                                <td>โรงซ่อมบำรุง</td>
+                                                <td>4,000 ตร.ม.</td>
+                                                <td>13.7300, 100.4700</td>
+                                                <td>13.7310, 100.4710</td>
+                                                <td>ใช้งานอยู่</td>
+                                                <td>20 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B006</td>
+                                                <td>อาคารพาณิชย์</td>
+                                                <td>3,500 ตร.ม.</td>
+                                                <td>13.7650, 100.5100</td>
+                                                <td>13.7655, 100.5110</td>
+                                                <td>รอการยืนยัน</td>
+                                                <td>35 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B007</td>
+                                                <td>โกดังสินค้า</td>
+                                                <td>6,200 ตร.ม.</td>
+                                                <td>13.7500, 100.4950</td>
+                                                <td>13.7505, 100.4955</td>
+                                                <td>ใช้งานอยู่</td>
+                                                <td>15 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B008</td>
+                                                <td>สถานีรถไฟ</td>
+                                                <td>7,800 ตร.ม.</td>
+                                                <td>13.7450, 100.4850</td>
+                                                <td>13.7460, 100.4860</td>
+                                                <td>รอการซ่อม</td>
+                                                <td>50 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B009</td>
+                                                <td>อาคารจอดรถ</td>
+                                                <td>2,800 ตร.ม.</td>
+                                                <td>13.7700, 100.5200</td>
+                                                <td>13.7710, 100.5210</td>
+                                                <td>ใช้งานอยู่</td>
+                                                <td>12 ปี</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B010</td>
+                                                <td>หอประชุม</td>
+                                                <td>1,500 ตร.ม.</td>
+                                                <td>13.7600, 100.5000</td>
+                                                <td>13.7610, 100.5010</td>
+                                                <td>รอการปรับปรุง</td>
+                                                <td>28 ปี</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr> 
+                            </div>
+                        </div>
+                    </div>
+                </main> 
+            </div>
+        </div>
+
+        
+
+        <script src="js/jquery-3.5.1.min.js"></script>   
+        <script src="js/app.js"></script>  
+
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap5.min.js"></script>
+        <script src="js/select2.min.js"></script> 
+        <script src="js/bootstrap-datepicker.min.js"></script> 
+        <script src="js/bootstrap-datepicker.th.min.js"></script> 
+
+
+        <script>  
+            $(document).ready(function() { 
+                $('.js-example-basic-multiple').select2();   
+                $('.item-sup').click(function () {
+                    $(this).toggleClass("show");    
+                });   
+            });    
+			$('.datepicker').datepicker({ 
+				todayHighlight: true, 
+				language: 'th',
+                format: 'dd/mm/yyyy',   
+                autoclose: true
+			}); 
+        </script> 
+ 
+    </body>
+</html>
