@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"/>   
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>   
         <link href="css/select2.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="wrapper">
@@ -34,7 +35,7 @@
                     <!-- <h2 class="text-center">ระบบรายงาน <br>งบประมาณประจำปี</h2>  -->
                     <br>
                     <ul class="sidebar-nav">   
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="index.html">
                                 <i class="fas fa-th-large menu-icon"></i>
 								<span class="align-middle">Dashboard</span> 
@@ -43,7 +44,7 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="menu2.html">
                                 <i class="fas fa-th-large menu-icon"></i>
-								<span class="align-middle">นำเข้าข้อมูล ภดส.7 (ข้อมูลจาก อปท.) </span> 
+								<span class="align-middle">นำเข้าข้อมูล รูปแปลงที่ดิน (ข้อมูลจาก อปท.) </span> 
                             </a> 
                         </li>    
                         <li class="sidebar-item item-sup">
@@ -115,14 +116,14 @@
                                 </a>     
                             </div>
                         </li>  
-                        <li class="sidebar-item item-sup">
+                        <li class="sidebar-item item-sup active show">
                             <a class="sidebar-link" href="#">
                                 <i class="fas fa-file-import menu-icon"></i> 
 								<span class="align-middle">นำเข้าข้อมูลที่ได้จากการสำรวจ</span>
 								<i class="fas fa-angle-down"></i>
                             </a>
                             <div class="sup-menu">
-                                <a class="sidebar-link" href="menu8-1.html"> 
+                                <a class="sidebar-link active" href="menu8-1.html"> 
                                     <span class="align-middle">รูปแปลงที่ดิน</span>
                                 </a>    
                                 <a class="sidebar-link" href="menu8-2.html"> 
@@ -130,7 +131,7 @@
                                 </a>     
                             </div>
                         </li> 
-                        <li class="sidebar-item item-sup">
+                        <li class="sidebar-item item-sup ">
                             <a class="sidebar-link" href="#">
                                 <i class="far fa-map menu-icon"></i>
 								<span class="align-middle">เปรียบเทียบข้อมูลแผนที่จากการสำรวจ และ LTAX</span>
@@ -241,101 +242,127 @@
                     </div>
                 </nav>
                 <main class="content">
-                    <div class="container-fluid p-0">
-                        <!-- <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <h3>หน้าหลัก</h3> 
-                            </div> 
-                        </div> -->
+                    <div class="container-fluid p-0"> 
+
+                        <div class="row">
+                            <div class="col-6">
+                                <h4 class="mb-3"> นำเข้าข้อมูลที่ได้จากการสำรวจ รูปแปลงที่ดิน</h4>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class="btn btn-info" ><i class="fal fa-file-excel"></i> นำเข้า CSV,XLS</button>
+                                <!-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal"><i class="fal fa-cog"></i> ตั้งค่าการประเมิน</button> -->
+                            </div>
+                        </div>
+
                         <div class="col-12">
+                            
                             <div class="card p-3 bord3">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3 pt-2">   
-                                        <h4><i class="fal fa-calendar-alt"></i> สรุปข้อมูลภาษีที่จัดเก็บ</h4>
-                                    </div>    
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3">  
-                                        <select class="js-example-basic-multiple w-100" id="year"> 
-                                            <option value="0" disabled selected>-- ปี --</option> 
-                                            <option value="2568">2568</option>
-                                            <option value="2567" selected>2567</option>
-                                            <option value="2566">2566</option>
-                                            <option value="2565">2565</option>
-                                            <option value="2564">2564</option>
-                                        </select>
-                                    </div>     
-                                    <div class="col-lg-4 col-md-6 col-12 mb-3">  
-                                        <select class="js-example-basic-multiple w-100" id="line"> 
-                                            <option value="0" disabled selected>-- เดือน --</option> 
-                                            <option value="01">มกราคม</option>
-                                            <option value="02">กุมภาพันธ์</option> 
-                                        </select>
-                                    </div>    
-                                </div>   
-                                <div class="row mt-2">
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-info">
-                                            <i class="fas fa-circle"></i> รวมแปลง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>103,390 </b></h2>
+                                <form class="form-rp">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="year">ชื่อไฟล์นำเข้า</label>
+                                            <input type="text" class="form-control">
+                                        </div>      
+                                        <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="year">วันที่นำเข้า</label>
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control icon-input datepicker">
+                                                <i class="fal fa-calendar-alt"></i>
+                                            </div>
+                                        </div>    
+                                        <!-- <div class="col-lg-4 col-md-6 col-12 mb-3"> 
+                                            <label for="month">ปรเภทผลงาน</label>
+                                            <select class="js-example-basic-multiple w-100" id="month"> 
+                                                <option value="0" disabled selected>-- กรุณาเลือก --</option> 
+                                                <option value="">ปรเภทผลงาน</option>
+                                                <option value="1">ปรเภทผลงาน</option>
+                                                <option value="2">ปรเภทผลงาน</option>
+                                                <option value="3">ปรเภทผลงาน</option> 
+                                            </select>
+                                        </div>     -->
+                                        <hr>
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-primary"><i class="fal fa-search"></i> ค้นหา</button> 
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="far fa-circle"></i> แยกแปลง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>2,331</b></h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <h4 class="card-header bg-danger">
-                                            <i class="fas fa-adjust"></i>สรุปจำนวนแปลงที่ดินและสิ่งปลูกสร้าง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <h2><b>10</b></h2>
-                                        </div>
-                                    </div>
-                                </div> 
-                                <div class="row mt-2"> 
-                                    <div class="col-lg-12 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-bar"></i> สรุปข้อมูลภาษีที่จัดเก็บได้
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center">
-                                            <canvas id="chart1"></canvas> 
-                                        </div>
-                                    </div>
-                                </div>  
-                                <div class="row mt-2"> 
-                                    <div class="col-lg-5 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-pie"></i> จำนวนมูลค่ารวมและแยกแปลงที่ดิน
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center position-relative"> 
-                                            <canvas id="chart2" class="d-block m-auto"></canvas> 
-                                            <button type="button" class="btn btn-info mt-5">
-                                                <i class="fal fa-search-plus"></i> คลิกเพื่อขยาย
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-12">
-                                        <h4 class="card-header bg-success">
-                                            <i class="fas fa-chart-bar"></i> สรุปมูลค่าราคาประเมินทั้งรวมและแยกแปลง
-                                        </h4>
-                                        <div class="card-body border pb-2 text-center position-relative"> 
-                                            <canvas id="chart3"></canvas> 
-                                            <br>
-                                            <button type="button" class="btn btn-info mt-3">
-                                                <i class="fal fa-search-plus"></i> คลิกเพื่อขยาย
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
+                                    </div> 
+                                </form>
+
+                                <br>
+                                
+                                <div class="table-responsive">
+
+                                    <table class="table table-borderless table-striped tb-num" style="vertical-align: middle;">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">#</th>
+                                                <th class="text-center">ชื่อไฟล์นำเข้า</th>
+                                                <th class="text-center">วันที่นำเข้า</th> 
+                                                <th class="text-center">เจ้าหน้าที่นำเข้า</th> 
+                                                <th class="text-center">ดูรายละเอียดไฟล์</th>   
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                            <tr>
+                                                <td class="text-center">-</td>
+                                                <td class="text-center">รูปแปลงที่ดิน-10-09-2567.csv</td>
+                                                <td class="text-center">13/09/2567	 </td> 
+                                                <td class="text-center">อดิศร ศรีสุธรรม</td>  
+                                                <td class="text-center">
+                                                    <a class="btn btn-danger btn-sm" href="menu8-1-view.html"><i class="fas fa-file-pdf"></i></a>   
+                                                </td> 
+                                            </tr>     
+                                        </tbody>
+                                    </table> 
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </main>
+                </main> 
             </div>
         </div>
 
@@ -347,9 +374,8 @@
         <script src="js/jquery.dataTables.min.js"></script>
         <script src="js/dataTables.bootstrap5.min.js"></script>
         <script src="js/select2.min.js"></script> 
-         
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        
+        <script src="js/bootstrap-datepicker.min.js"></script> 
+        <script src="js/bootstrap-datepicker.th.min.js"></script> 
 
 
         <script>  
@@ -358,78 +384,14 @@
                 $('.item-sup').click(function () {
                     $(this).toggleClass("show");    
                 });   
-            });   
-            $(".tb-num td:nth-child(1)").each(function(i,v) {$(v).text(i + 1);});
+            });    
+			$('.datepicker').datepicker({ 
+				todayHighlight: true, 
+				language: 'th',
+                format: 'dd/mm/yyyy',   
+                autoclose: true
+			}); 
         </script> 
-        
-        <script>
- 
-            var myContext = document.getElementById("chart1").getContext('2d'); 
-            var myChart = new Chart(myContext, { 
-                type: 'bar', 
-                data: { 
-                    labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม",  "เมษายน", "พฤษภาคม", "มิถุนายน","กรกฏาคม", "สิงหาคม", "กันยายน",  "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], 
-                    datasets: [{ 
-                        label: 'สรุปข้อมูลภาษีที่จัดเก็บได้', 
-                        backgroundColor: "#4AC0C0", 
-                        data: [1330, 800, 500, 1220 , 800, 1500, 1900 ,1200, 1600, 800, 120 , 303], 
-                    } 
-                    ], 
-                }, 
-                options: {  
-                    scales: { 
-                        x: { 
-                            stacked: true, 
-                        }, 
-                        y: { 
-                            stacked: true 
-                        } 
-                    } 
-                } 
-            });  
-
-            
-            var xValues = ["ต้องเสียภาษี", "ยังไม่ได้เสียภาษี", "ยกเว้นภาษี"];
-            var yValues = [78, 5 , 12];
-            var barColors = [ "#4AC0C0","#FE6383","#952124"]; 
-            // chart2.height = "400px"; 
-            new Chart("chart2", {
-            type: "pie",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                    }]
-                } 
-            });
-        
-            var myContext = document.getElementById("chart3").getContext('2d'); 
-            var myChart = new Chart(myContext, { 
-                type: 'bar', 
-                data: { 
-                    labels: ["มกราคม", "กุมภาพันธ์", "มีนาคม",  "เมษายน", "พฤษภาคม", "มิถุนายน","กรกฏาคม", "สิงหาคม", "กันยายน",  "ตุลาคม", "พฤศจิกายน", "ธันวาคม"], 
-                    datasets: [{ 
-                        label: 'สรุปมูลค่าราคาประเมินทั้งรวมและแยกแปลง องค์ความรู้', 
-                        backgroundColor: "#4AC0C0", 
-                        data: [1330, 800, 500, 1220 , 800, 1500, 1900 ,1200, 1600, 800, 120 , 303], 
-                    } 
-                    ], 
-                }, 
-                options: {  
-                    scales: { 
-                        x: { 
-                            stacked: true, 
-                        }, 
-                        y: { 
-                            stacked: true 
-                        } 
-                    } 
-                } 
-            }); 
-
-        </script>
-            
  
     </body>
 </html>
